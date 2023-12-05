@@ -2,14 +2,24 @@ import styled from "@emotion/styled";
 
 export const BookDetailsWrapper = styled.div`
   padding: 20px;
-
-  display: flex;
   gap: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
 
   .img-wrapper {
     position: relative;
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 300px;
+    max-width: 300px;
+
+    @media (min-width: 450px) {
+      min-width: 400px;
+      max-width: 400px;
+    }
 
     img {
       box-shadow: 4px 4px 14px;
