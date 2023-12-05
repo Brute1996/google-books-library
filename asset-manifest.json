@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/google-books-library/static/css/main.97b6c6d6.css",
-    "main.js": "/google-books-library/static/js/main.1193325e.js",
+    "main.js": "/google-books-library/static/js/main.a83f98a4.js",
     "static/js/492.688a2999.chunk.js": "/google-books-library/static/js/492.688a2999.chunk.js",
-    "static/js/775.62d64549.chunk.js": "/google-books-library/static/js/775.62d64549.chunk.js",
+    "static/js/775.c734f0d1.chunk.js": "/google-books-library/static/js/775.c734f0d1.chunk.js",
     "static/js/328.9e1e0cac.chunk.js": "/google-books-library/static/js/328.9e1e0cac.chunk.js",
     "index.html": "/google-books-library/index.html",
     "main.97b6c6d6.css.map": "/google-books-library/static/css/main.97b6c6d6.css.map",
-    "main.1193325e.js.map": "/google-books-library/static/js/main.1193325e.js.map",
+    "main.a83f98a4.js.map": "/google-books-library/static/js/main.a83f98a4.js.map",
     "492.688a2999.chunk.js.map": "/google-books-library/static/js/492.688a2999.chunk.js.map",
-    "775.62d64549.chunk.js.map": "/google-books-library/static/js/775.62d64549.chunk.js.map",
+    "775.c734f0d1.chunk.js.map": "/google-books-library/static/js/775.c734f0d1.chunk.js.map",
     "328.9e1e0cac.chunk.js.map": "/google-books-library/static/js/328.9e1e0cac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.97b6c6d6.css",
-    "static/js/main.1193325e.js"
+    "static/js/main.a83f98a4.js"
   ]
 }
