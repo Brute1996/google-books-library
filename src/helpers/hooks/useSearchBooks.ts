@@ -66,7 +66,6 @@ const useSearchBooks = () => {
           dispatch(setBooks(booksRes));
         }
       } catch (error) {
-        // Обработка ошибок при необходимости
       } finally {
         dispatch(setIsBooksLoaded(true));
       }
