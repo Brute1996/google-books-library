@@ -31,9 +31,9 @@ const BookList = () => {
                 })}
               </ul>
 
-              {books.totalItems > BOOKS_PER_PAGE ||
-              books.totalItems < startIndex ||
-              !books.items ? (
+              {books.items &&
+              (books.totalItems > BOOKS_PER_PAGE ||
+                books.totalItems < startIndex) ? (
                 <div className="load-more-btn-wrapper">
                   <LoadMoreButton />
                 </div>
