@@ -9,7 +9,7 @@ export const BookDetailsWrapper = styled.div`
 
   @media (min-width: 900px) {
     flex-direction: row;
-    align-items: normal;
+    align-items: start;
   }
 
   .img-wrapper {
@@ -37,7 +37,7 @@ export const BookDetailsWrapper = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100%;
+    min-height: 400px;
   }
 
   .back-button-wrapper {
