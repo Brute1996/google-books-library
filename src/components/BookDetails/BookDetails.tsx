@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { IBooksItem } from "../../helpers/models/booksRes";
 import { NOT_FOUND_IMG } from "../../helpers/constants/constants";
 import { BookDetailsWrapper } from "./BookDetails.styled";
@@ -11,31 +11,26 @@ import BackButton from "./BackButton/BackButton";
 
 const BookDetails = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const location = useLocation();
   const [book, setBook] = useState<IBooksItem | null>(null);
   const { bookId } = useParams();
 
   const [isBookLoaded, setIsBookLoaded] = useState(true);
 
   useEffect(() => {
-    if (!location.state) {
-      setIsBookLoaded(false);
-      (async () => {
-        const fetchedBook = await getBookById(bookId!);
+    setIsBookLoaded(false);
+    (async () => {
+      const fetchedBook = await getBookById(bookId!);
 
-        if (fetchedBook) {
-          setBook(fetchedBook);
-        }
-        try {
-        } catch (error) {
-        } finally {
-          setIsBookLoaded(true);
-        }
-      })();
-    } else {
-      const { book }: { book: IBooksItem } = location.state;
-      setBook(book);
-    }
+      if (fetchedBook) {
+        setBook(fetchedBook);
+      }
+      try {
+      } catch (error) {
+      } finally {
+        setIsBookLoaded(true);
+      }
+    })();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
