@@ -9,6 +9,7 @@ export const BookDetailsWrapper = styled.div`
 
   @media (min-width: 900px) {
     flex-direction: row;
+    align-items: normal;
   }
 
   .img-wrapper {
