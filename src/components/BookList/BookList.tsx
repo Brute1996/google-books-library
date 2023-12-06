@@ -7,6 +7,7 @@ import { BookListWrapper } from "./BookList.styled";
 import FoundResult from "./FoundResult/FoundResult";
 import { BOOKS_PER_PAGE } from "../../helpers/constants/constants";
 import useSearchBooks from "../../helpers/hooks/useSearchBooks";
+import WelcomeText from "./WelcomeText/WelcomeText";
 
 const BookList = () => {
   const { isBooksLoad, books, startIndex } = useAppSelector(
@@ -21,7 +22,7 @@ const BookList = () => {
         <Loader />
       ) : (
         <>
-          {books && (
+          {books ? (
             <>
               <FoundResult totalItems={books.totalItems} />
               <ul className="cards-wrapper">
@@ -38,6 +39,8 @@ const BookList = () => {
                 </div>
               ) : null}
             </>
+          ) : (
+            <WelcomeText />
           )}
         </>
       )}

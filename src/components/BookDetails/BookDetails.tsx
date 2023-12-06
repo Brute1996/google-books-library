@@ -45,7 +45,6 @@ const BookDetails = () => {
     const zoomedImg = imageLinks?.thumbnail.includes("zoom=1")
       ? imageLinks.thumbnail.replace("zoom=1", "zoom=0")
       : imageLinks?.thumbnail;
-    console.log(book.volumeInfo.imageLinks.medium);
 
     return (
       <BookDetailsWrapper>
@@ -78,9 +77,7 @@ const BookDetails = () => {
           <Typography component="h2" variant="h4">
             {title}
           </Typography>
-          <Typography
-            dangerouslySetInnerHTML={{ __html: description }}
-          ></Typography>
+          <div dangerouslySetInnerHTML={{ __html: description }} />
           <Divider sx={{ width: "100%", margin: "12px 0" }} />
           {authors?.length > 0 && (
             <Typography color="gray">{authors.join(", ")}</Typography>
