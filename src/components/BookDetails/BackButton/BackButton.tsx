@@ -11,7 +11,7 @@ const BackButton = () => {
       <Button
         variant="contained"
         onClick={() =>
-          navigate(location.state ? location.state.comeFromPage : "/")
+          location.state?.comeFromPage ? navigate(-1) : navigate("/")
         }
       >
         Back
