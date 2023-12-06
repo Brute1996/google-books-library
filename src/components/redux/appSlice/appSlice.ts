@@ -11,7 +11,7 @@ interface appState {
   selectedSortingBy: SortingByType;
   isBooksLoad: boolean;
   books: IBooksRes | null;
-  startIndex: number;
+  currentPage: number;
 }
 
 const initialState: appState = {
@@ -20,7 +20,7 @@ const initialState: appState = {
   selectedSortingBy: "relevance",
   isBooksLoad: true,
   books: null,
-  startIndex: 0,
+  currentPage: 1,
 };
 
 export const appSlice = createSlice({
@@ -41,15 +41,15 @@ export const appSlice = createSlice({
     },
     setBooks: (state, action: PayloadAction<IBooksRes>) => {
       state.books = action.payload;
-      state.startIndex = 0;
+      state.currentPage = 1;
     },
     loadMoreBooks: (state, action: PayloadAction<IBooksRes>) => {
       if (state.books) {
         state.books.items = [...state.books.items, ...action.payload.items];
       }
     },
-    setStartIndex: (state, action: PayloadAction<number>) => {
-      state.startIndex += action.payload;
+    setCurrentPage: (state) => {
+      state.currentPage = state.currentPage + 1;
     },
   },
 });
@@ -61,7 +61,7 @@ export const {
   setIsBooksLoaded,
   setBooks,
   loadMoreBooks,
-  setStartIndex,
+  setCurrentPage,
 } = appSlice.actions;
 
 export default appSlice.reducer;

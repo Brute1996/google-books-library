@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../helpers/hooks/hooks";
 import { searchBooks } from "../../../helpers/api/searchBooks";
-import { loadMoreBooks, setStartIndex } from "../../redux/appSlice/appSlice";
+import { loadMoreBooks, setCurrentPage } from "../../redux/appSlice/appSlice";
 import { LoadingButton } from "@mui/lab";
 import { BOOKS_PER_PAGE } from "../../../helpers/constants/constants";
 
 const LoadMoreButton = () => {
   const [loadMoreIsLoading, setLoadMoreIsLoading] = useState(false);
-  const { searchQuery, selectedCategory, selectedSortingBy, startIndex } =
+  const { searchQuery, selectedCategory, selectedSortingBy, currentPage } =
     useAppSelector((state) => state.app);
   const dispatch = useAppDispatch();
 
   const handleLoadMore = async () => {
-    dispatch(setStartIndex(BOOKS_PER_PAGE));
+    dispatch(setCurrentPage());
 
     setLoadMoreIsLoading(true);
 
@@ -22,7 +22,7 @@ const LoadMoreButton = () => {
           q: searchQuery,
           subject: selectedCategory,
           orderBy: selectedSortingBy,
-          startIndex: startIndex + BOOKS_PER_PAGE,
+          startIndex: currentPage * BOOKS_PER_PAGE,
         });
 
         if (booksRes) {
@@ -36,14 +36,16 @@ const LoadMoreButton = () => {
   };
 
   return (
-    <LoadingButton
-      onClick={() => handleLoadMore()}
-      variant="contained"
-      type="button"
-      loading={loadMoreIsLoading}
-    >
-      Load more
-    </LoadingButton>
+    <div className="load-more-btn-wrapper">
+      <LoadingButton
+        onClick={() => handleLoadMore()}
+        variant="contained"
+        type="button"
+        loading={loadMoreIsLoading}
+      >
+        Load more
+      </LoadingButton>
+    </div>
   );
 };
 

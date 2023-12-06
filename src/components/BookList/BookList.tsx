@@ -10,7 +10,7 @@ import useSearchBooks from "../../helpers/hooks/useSearchBooks";
 import WelcomeText from "./WelcomeText/WelcomeText";
 
 const BookList = () => {
-  const { isBooksLoad, books, startIndex } = useAppSelector(
+  const { isBooksLoad, books, currentPage } = useAppSelector(
     (state) => state.app
   );
 
@@ -31,12 +31,9 @@ const BookList = () => {
                 })}
               </ul>
 
-              {books.items &&
-              (books.totalItems > BOOKS_PER_PAGE ||
-                books.totalItems < startIndex) ? (
-                <div className="load-more-btn-wrapper">
-                  <LoadMoreButton />
-                </div>
+              {books?.items &&
+              books.totalItems > currentPage * BOOKS_PER_PAGE ? (
+                <LoadMoreButton />
               ) : null}
             </>
           ) : (
