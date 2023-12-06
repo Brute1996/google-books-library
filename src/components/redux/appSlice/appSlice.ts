@@ -39,7 +39,7 @@ export const appSlice = createSlice({
     setIsBooksLoaded: (state, action: PayloadAction<boolean>) => {
       state.isBooksLoad = action.payload;
     },
-    setBooks: (state, action: PayloadAction<IBooksRes>) => {
+    setBooks: (state, action: PayloadAction<IBooksRes | null>) => {
       state.books = action.payload;
       state.currentPage = 1;
     },
