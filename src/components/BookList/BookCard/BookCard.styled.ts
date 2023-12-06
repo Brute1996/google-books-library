@@ -42,7 +42,6 @@ export const BookCardWrapper = styled.li`
       text-decoration: underline;
       font-size: 14px;
       color: gray;
-      height: 21px;
     }
 
     .author-item {
