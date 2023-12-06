@@ -49,7 +49,7 @@ export const appSlice = createSlice({
       }
     },
     setNextPage: (state) => {
-      state.currentPage = state.currentPage + 1;
+      state.currentPage += 1;
     },
   },
 });
