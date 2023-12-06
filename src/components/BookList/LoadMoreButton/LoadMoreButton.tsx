@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../helpers/hooks/hooks";
 import { searchBooks } from "../../../helpers/api/searchBooks";
-import { loadMoreBooks, setCurrentPage } from "../../redux/appSlice/appSlice";
+import { loadMoreBooks, setNextPage } from "../../redux/appSlice/appSlice";
 import { LoadingButton } from "@mui/lab";
 import { BOOKS_PER_PAGE } from "../../../helpers/constants/constants";
 
@@ -12,7 +12,7 @@ const LoadMoreButton = () => {
   const dispatch = useAppDispatch();
 
   const handleLoadMore = async () => {
-    dispatch(setCurrentPage());
+    dispatch(setNextPage());
 
     setLoadMoreIsLoading(true);
 

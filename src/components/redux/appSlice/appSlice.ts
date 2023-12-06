@@ -48,7 +48,7 @@ export const appSlice = createSlice({
         state.books.items = [...state.books.items, ...action.payload.items];
       }
     },
-    setCurrentPage: (state) => {
+    setNextPage: (state) => {
       state.currentPage = state.currentPage + 1;
     },
   },
@@ -61,7 +61,7 @@ export const {
   setIsBooksLoaded,
   setBooks,
   loadMoreBooks,
-  setCurrentPage,
+  setNextPage,
 } = appSlice.actions;
 
 export default appSlice.reducer;
