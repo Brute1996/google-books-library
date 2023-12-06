@@ -17,20 +17,24 @@ export const searchBooks = async ({
   subject,
   orderBy,
   startIndex,
-}: ISearchBooksParams) => {
+}: ISearchBooksParams): Promise<IBooksRes | undefined> => {
   try {
-    const queryString = subject ? `${q}+subject:${subject}` : q;
+    if (q) {
+      const queryString = subject ? `${q}+subject:${subject}` : q;
 
-    const { data } = await googleBooksApi.get("", {
-      params: {
-        q: queryString,
-        orderBy,
-        maxResults: BOOKS_PER_PAGE,
-        startIndex,
-      },
-    });
+      const { data } = await googleBooksApi.get("", {
+        params: {
+          q: queryString,
+          orderBy,
+          maxResults: BOOKS_PER_PAGE,
+          startIndex,
+        },
+      });
 
-    return data as IBooksRes;
+      return data;
+    } else {
+      return { items: [], totalItems: 0 };
+    }
   } catch (error) {
     if (error instanceof AxiosError) {
       throw new Error(error.response?.data.error.message || "Unknown error");

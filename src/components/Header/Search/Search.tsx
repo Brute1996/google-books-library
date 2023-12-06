@@ -37,23 +37,14 @@ const Search = () => {
     });
 
     try {
-      if (searchQuery) {
-        const booksRes = await searchBooks({
-          q: searchQuery,
-          orderBy: selectedSortingBy,
-          subject: selectedCategory,
-        });
+      const booksRes = await searchBooks({
+        q: searchQuery,
+        orderBy: selectedSortingBy,
+        subject: selectedCategory,
+      });
 
-        if (booksRes) {
-          dispatch(setBooks(booksRes));
-        }
-      } else {
-        dispatch(
-          setBooks({
-            items: [],
-            totalItems: 0,
-          })
-        );
+      if (booksRes) {
+        dispatch(setBooks(booksRes));
       }
     } catch (error) {
       if (error instanceof Error) {

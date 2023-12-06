@@ -56,23 +56,14 @@ const useSearchBooks = () => {
 
     (async () => {
       try {
-        if (searchQueryParam) {
-          const booksRes = await searchBooks({
-            q: searchQueryParam,
-            orderBy: validSortBy,
-            subject: validCategory || "",
-          });
+        const booksRes = await searchBooks({
+          q: searchQueryParam,
+          orderBy: validSortBy,
+          subject: validCategory || "",
+        });
 
-          if (booksRes) {
-            dispatch(setBooks(booksRes));
-          }
-        } else {
-          dispatch(
-            setBooks({
-              items: [],
-              totalItems: 0,
-            })
-          );
+        if (booksRes) {
+          dispatch(setBooks(booksRes));
         }
       } catch (error) {
       } finally {
