@@ -5,6 +5,7 @@ import App from "./components/App";
 import { Provider } from "react-redux";
 import store from "./components/redux/store";
 import { BrowserRouter } from "react-router-dom";
+import "../src/helpers/utils/robotoFontImport";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
