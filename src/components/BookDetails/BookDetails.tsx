@@ -42,10 +42,6 @@ const BookDetails = () => {
     const { authors, categories, imageLinks, title, description } =
       book.volumeInfo;
 
-    const largeBookImg = imageLinks?.thumbnail.includes("zoom=1")
-      ? imageLinks.thumbnail.replace("zoom=1", "zoom=0")
-      : imageLinks?.thumbnail;
-
     return (
       <BookDetailsWrapper>
         <div className="img-wrapper">
@@ -53,7 +49,7 @@ const BookDetails = () => {
             onLoad={() => setIsImageLoaded(true)}
             loading="lazy"
             width="100%"
-            src={largeBookImg || NOT_FOUND_IMG}
+            src={imageLinks.medium || NOT_FOUND_IMG}
             alt={title || "Title not found"}
           />
           {!isImageLoaded && (

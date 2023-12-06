@@ -4,7 +4,14 @@ export interface IBooksItem {
     title: string;
     authors: string[];
     categories: string[];
-    imageLinks: { smallThumbnail: string; thumbnail: string };
+    imageLinks: {
+      extraLarge: string;
+      large: string;
+      medium: string;
+      small: string;
+      smallThumbnail: string;
+      thumbnail: string;
+    };
     description: string;
   };
 }
