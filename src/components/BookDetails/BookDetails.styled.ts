@@ -14,17 +14,17 @@ export const BookDetailsWrapper = styled.div`
 
   .img-wrapper {
     position: relative;
-    min-width: 300px;
-    max-width: 300px;
-
-    @media (min-width: 450px) {
-      min-width: 400px;
-      max-width: 400px;
-    }
 
     img {
+      min-width: 300px;
+      max-width: 300px;
       box-shadow: 4px 4px 14px;
       border-radius: 4px;
+
+      @media (min-width: 450px) {
+        min-width: 400px;
+        max-width: 400px;
+      }
     }
   }
 
@@ -33,9 +33,6 @@ export const BookDetailsWrapper = styled.div`
   }
 
   .img-skeleton {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     min-height: 400px;
   }
