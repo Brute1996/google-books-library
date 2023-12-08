@@ -70,7 +70,7 @@ const Search = () => {
         helperText={errorMessage ? errorMessage : null}
         fullWidth
         name="search"
-        value={searchQuery}
+        value={searchQuery || ""}
         onChange={handleChange}
         label="Search book"
         variant="outlined"

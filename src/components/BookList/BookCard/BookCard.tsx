@@ -15,7 +15,10 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
 
   return (
     <BookCardWrapper>
-      <Link to={`/book/${book.id}`} state={{ comeFromPage: pathname + search }}>
+      <Link
+        to={`/book/${book.id}${search}`}
+        state={{ comeFromPage: pathname + search }}
+      >
         <Paper className="paper" elevation={4}>
           <div className="img-wrapper">
             <img
